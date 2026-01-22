@@ -1,10 +1,19 @@
+import { UploadWidgetDropzone } from "./upload-widget-dropzone"
+import { UploadWidgetHeader } from "./upload-widget-header"
+import { UploadWidgetUploadList } from "./upload-widget-upload-list"
+
 export function UploadWidget() {
   return (
-    <div className="border-2 border-dashed border-gray-300 p-6 rounded-lg w-80 text-center">
-      <input type="file" className="mb-4" />
-      <button className="bg-zinc-900 max-w-[360px] rounded-3xl">
-        Upload
-      </button>
+    <div className="bg-zinc-900 w-full overflow-hidden max-w-[360px] rounded-xl">
+      <UploadWidgetHeader />
+
+      <div className="flex flex-col gap-4 py-3">
+        <UploadWidgetDropzone />
+
+        <div className="h-px bg-zinc-800 border-t border-black box-content"></div>
+
+        <UploadWidgetUploadList />
+      </div>
     </div>
   )
 }
